@@ -3,6 +3,7 @@ package com.example.ifsc.service;
 import java.util.List;
 
 import com.example.ifsc.dto.BranchDetails;
+import com.example.ifsc.exception.BranchNotFoundException;
 
 public interface IfscSevice {
 
@@ -10,8 +11,9 @@ public interface IfscSevice {
 	/**
 	 * @param ifsc
 	 * @return Branch Details 
+	 * @throws BranchNotFoundException 
 	 */
-	public BranchDetails getBranchDetails(String ifsc); 
+	public BranchDetails getBranchDetails(String ifsc) throws BranchNotFoundException; 
 	
 	
 	/**

@@ -9,10 +9,14 @@ import org.springframework.stereotype.Service;
 
 import com.example.ifsc.dto.BranchDetails;
 import com.example.ifsc.entities.Branch;
+import com.example.ifsc.exception.BranchNotFoundException;
 import com.example.ifsc.repository.IBranchesRepository;
 import com.example.ifsc.service.IfscSevice;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class IfscServiceImpl implements IfscSevice{
 
 	@Autowired
@@ -28,9 +32,12 @@ public class IfscServiceImpl implements IfscSevice{
 	 */
 	
 	@Override
-	public BranchDetails getBranchDetails(String ifsc) {
+	public BranchDetails getBranchDetails(String ifsc) throws BranchNotFoundException {
 		
 		Branch branch = branchRepo.findByIfsc(ifsc);
+		if (null == branch) {
+			throw BranchNotFoundException.createWith(ifsc);
+		}
 		BranchDetails branchdetails = modelMapper.map(branch, BranchDetails.class);
 		return branchdetails;
 	}
