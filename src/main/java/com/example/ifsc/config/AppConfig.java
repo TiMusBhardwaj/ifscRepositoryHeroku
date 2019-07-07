@@ -1,11 +1,16 @@
 package com.example.ifsc.config;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Collections;
+
+import javax.sql.DataSource;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +34,27 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Slf4j
 public class AppConfig {
+	
+	
+	@Bean
+	public DataSource dataSource() throws URISyntaxException {
+        URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
+
+       
+        
+        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
+        dataSourceBuilder.url(dbUrl);
+        dataSourceBuilder.username(username);
+        dataSourceBuilder.password(password);
+        return dataSourceBuilder.build();
+
+        
+    }
+	
 	
 	@Bean
 	public ModelMapper modelMapper() {
