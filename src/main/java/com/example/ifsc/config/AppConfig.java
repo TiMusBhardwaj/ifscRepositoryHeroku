@@ -14,6 +14,7 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.example.ifsc.dto.BranchDetails;
@@ -36,7 +37,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class AppConfig {
 	
 	
+	/**
+	 * This data-source is created when app is running in heroku.
+	 * DATABASE_URL is provided by heroku environment.
+	 */
 	@Bean
+	@Profile("heroku")
 	public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
 

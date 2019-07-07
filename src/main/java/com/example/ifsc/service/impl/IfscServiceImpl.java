@@ -23,11 +23,11 @@ public class IfscServiceImpl implements IfscSevice{
 	@Autowired
 	private ModelMapper modelMapper;
 	
-	@EventListener(ContextRefreshedEvent.class)
-	public void test() {
-		getBranchDetails("AKJB0000012");
-		getBranchDetails("ABHYUDAYA COOPERATIVE BANK LIMITED", "MUMBAI");
-	}
+	/*
+	 * @EventListener(ContextRefreshedEvent.class) public void test() {
+	 * getBranchDetails("AKJB0000012");
+	 * getBranchDetails("ABHYUDAYA COOPERATIVE BANK LIMITED", "MUMBAI"); }
+	 */
 	
 	@Override
 	public BranchDetails getBranchDetails(String ifsc) {
