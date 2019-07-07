@@ -6,6 +6,10 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.example.ifsc.entities.Branch;
 
+/**
+ * @author sumit.bhardwaj
+ *
+ */
 public interface IBranchesRepository extends PagingAndSortingRepository<Branch, String>{
 
 	public Branch findByIfsc(String ifsc);

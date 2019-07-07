@@ -3,6 +3,10 @@ package com.example.ifsc.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author sumit.bhardwaj
+ *
+ */
 @Getter
 @Setter
 public class BranchDetails {

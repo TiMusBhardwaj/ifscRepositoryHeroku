@@ -5,6 +5,10 @@ import java.util.List;
 import com.example.ifsc.dto.BranchDetails;
 import com.example.ifsc.exception.BranchNotFoundException;
 
+/**
+ * @author sumit.bhardwaj
+ *
+ */
 public interface IfscSevice {
 
 	

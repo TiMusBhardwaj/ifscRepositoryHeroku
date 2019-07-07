@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
+/**
+ * @author sumit.bhardwaj
+ *
+ */
 @SpringBootApplication
 @EnableAutoConfiguration(exclude= {SecurityAutoConfiguration.class})
 public class IfscRepositoryApplication {

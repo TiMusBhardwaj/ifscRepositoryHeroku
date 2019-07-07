@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
-import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +18,10 @@ import com.example.ifsc.exception.BranchNotFoundException;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author sumit.bhardwaj
+ *
+ */
 @ControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {

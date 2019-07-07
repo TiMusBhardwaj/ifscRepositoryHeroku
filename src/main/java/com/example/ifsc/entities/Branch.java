@@ -9,6 +9,10 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author sumit.bhardwaj
+ *
+ */
 @Entity
 @Table(name="branches")
 @Getter

@@ -16,6 +16,12 @@ import com.example.ifsc.dto.BranchDetails;
 import com.example.ifsc.exception.BranchNotFoundException;
 import com.example.ifsc.service.IfscSevice;
 
+/**
+ * IFSC controller class
+ * 
+ * @author sumit.bhardwaj
+ *
+ */
 @RestController
 @RequestMapping("/bank")
 public class IfscController {
