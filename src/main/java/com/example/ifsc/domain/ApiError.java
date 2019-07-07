@@ -1,6 +1,10 @@
 package com.example.ifsc.domain;
 import java.util.List;
 
+/**
+ * @author sumit.bhardwaj
+ *
+ */
 public class ApiError {
     private List<String> errors;
 
