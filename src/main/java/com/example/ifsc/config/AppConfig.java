@@ -65,6 +65,11 @@ public class AppConfig {
         
     }
 	
+	/**
+	 * This will force to use HTTPS in Heroku environment
+	 * 
+	 * @return WebSecurityConfigurerAdapter
+	 */
 	@Bean
 	@Profile("heroku")
 	public WebSecurityConfigurerAdapter webSecurityConfigurerAdapter() {
